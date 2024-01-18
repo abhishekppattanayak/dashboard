@@ -1,0 +1,1 @@
+document.querySelector('footer>span').textContent = `Copyright © ${new Date().getFullYear()} `;

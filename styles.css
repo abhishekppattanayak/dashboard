@@ -1,0 +1,141 @@
+:root {
+    --violet-700: #6d28d9;
+    --violet-600: #7c3aed;
+    --violet-500: #8b5cf6;
+    --violet-400: #a78bfa;
+    --violet-300: #c4b5fd;
+    --violet-200: #ddd6fe;
+    --violet-100: #ede9fe;
+    --violet-50: #f5f3ff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    list-style-type: none;
+}
+body{
+    width: 100vw;
+    display: grid;
+    border-radius: 8px;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 4fr;
+}
+aside.sidebar {
+    color: var(--violet-50);
+    background-color: var(--violet-500);
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    gap: 24px;
+}
+aside.sidebar > div:nth-child(1) {
+    grid-row : 1 / 2;
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;   
+}
+aside.sidebar > ul {
+    padding: 16px;
+    font-size:  1.75rem;
+    font-weight: 700;
+}
+aside.sidebar > ul > li{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin: 8px;
+}
+a{    
+    text-decoration: none;
+    color: var(--violet-50);
+}
+footer {
+    padding: 16px;
+    font-size: 1.5rem;
+}
+header {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    background-color: var(--violet-50);
+    color: var(--violet-700);
+    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+}
+
+main {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    background-color: var(--violet-300);
+    display: grid;
+    padding: 24px;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+main > div {
+    background-color: var(--violet-100);
+    border-radius: 12px;
+    border: 2px solid var(--violet-500);
+    color: var(--violet-500);
+    padding: 12px;
+}
+main h1 , main p {
+    padding: 12px;
+    margin: 12px;
+}
+main p{
+    font-size: 1.2rem;
+}
+main svg {
+    fill: var(--violet-500);
+}
+
+main > div:hover {
+    background-color: var(--violet-500);
+    color: var(--violet-50);
+}
+
+main > div:hover svg {
+    fill: var(--violet-50);
+}
+main ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+section {
+    grid-row: 2 / 3 ;
+    grid-column: 3 / 4;
+    background-color: var(--violet-300);
+}
+
+@media(max-width: 888px){
+    aside.sidebar {
+        display: none;
+    }
+    header {
+        grid-column: 1 / 4;
+    }
+    main {
+        grid-column: 1 / 4;
+    }
+    section {
+        display: none;
+    }
+}
+
+@media (min-width:889px) and (max-width: 1020px) {
+    main {
+        grid-column: 2 / 4;
+    }
+    section {
+        display: none;
+    }
+}
