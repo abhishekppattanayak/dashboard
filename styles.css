@@ -20,7 +20,7 @@ body{
     display: grid;
     border-radius: 8px;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 150px 4fr;
 }
 aside.sidebar {
     color: var(--violet-50);
@@ -65,21 +65,58 @@ header {
     grid-row: 1 / 2;
     background-color: var(--violet-50);
     color: var(--violet-700);
-    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+    font-size: clamp(2rem, 3.2vw, 2.4rem);
+    padding: 32px;
     font-weight: 800;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+header > * {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 18px;
+}
+header>*>* {
+    align-self: center;
+}
+header > div > input {
+    width: 60%;
+    height: 33%;
+    outline: 1px solid black;
+    border-radius: 8px;
+    border: none;
 }
 
+nav > div {
+    color: var(--violet-100);
+    background-color: var(--violet-700);
+    width: 100%;
+    text-align: center;
+    padding: 8px 18px;
+    font-size: 1.8rem;
+    margin: 12px;
+    border-radius: 12px;
+}
 main {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     background-color: var(--violet-300);
+}
+main > div:nth-child(1) > h1 {
+    color:var(--violet-700);
+    font-weight: 700;
+    font-size: 2.4rem;
+}
+main > div:nth-child(2) {
     display: grid;
     padding: 24px;
     gap: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));   
+    
 }
-
-main > div {
+main > div > div {
     background-color: var(--violet-100);
     border-radius: 12px;
     border: 2px solid var(--violet-500);
@@ -97,12 +134,12 @@ main svg {
     fill: var(--violet-500);
 }
 
-main > div:hover {
+main >div > div:hover {
     background-color: var(--violet-500);
     color: var(--violet-50);
 }
 
-main > div:hover svg {
+main > div > div:hover svg {
     fill: var(--violet-50);
 }
 main ul {
@@ -117,11 +154,15 @@ section {
 }
 
 @media(max-width: 888px){
+    body {
+        grid-template-rows: auto;
+    }
     aside.sidebar {
         display: none;
     }
     header {
         grid-column: 1 / 4;
+        grid-template-columns: 1fr;
     }
     main {
         grid-column: 1 / 4;
